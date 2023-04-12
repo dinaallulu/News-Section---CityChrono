@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="stylesheet" href="css/styleNews.css">
+    <title>News Section</title>
+</head>
+
+<body>
+    <!-- Start News Section -->
+    <section class="newsSection">
+        <div class="container">
+            <div class="newsNav">
+                <h5 class="lastestNews">latest news section</h5>
+                <!-- Start dropdown category -->
+                <div class="dropdown">
+                    <!-- icon category menu -->
+                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                        <span class="material-symbols-outlined">
+                            filter_list
+                        </span>
+                    </a>
+                    <!-- Start dropdown category menu -->
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#genral" id="genral">Genral</a>
+                        <a class="dropdown-item" href="#business" id="business">Business</a>
+                        <a class="dropdown-item" href="#sport" id="sport">Sport</a>
+                        <a class="dropdown-item" href="#technology" id="technology">Technology</a>
+                        <a class="dropdown-item" href="#entertaiment" id="entertaiment">Entertaiment</a>
+                    </div>
+                    <!-- End dropdown category menu -->
+                </div>
+                <!-- End dropdown category -->
+            </div>
+            <!-- Start News Display -->
+            <div class="newsdisplay">
+                <din id="newsType"></din>
+                <div id="newsDetails"></div>
+            </div>
+            <!-- End News Display -->
+        </div>
+    </section>
+    <!-- End News Section -->
+
+    <script src="js/mainNews.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"  crossorigin="anonymous"></script>
+</body>
+
+</html>
