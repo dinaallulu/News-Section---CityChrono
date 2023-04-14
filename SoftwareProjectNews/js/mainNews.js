@@ -1,39 +1,34 @@
-// Variables
-const genralBtn = document.getElementById("genral");
-const businessBtn =  document.getElementById("business");
-const sportBtn = document.getElementById("sport");
-const technologyBtn =  document.getElementById("technology");
-const entertaimentBtn = document.getElementById("entertaiment");
+const API_KEY = "6a48f4f797c8464498e112e7628e2c8b"
+const URL = "https://newsapi.org/v2/everything?q="
 
-const newsTypeBtn = document.getElementById("newsType");
-const newsDetailsBtn = document.getElementById("newsDetails");
+let DATA_ARRAY = []
 
-// APIs
-const APIs_KEY = "6a48f4f797c8464498e112e7628e2c8b";
-const HEADLINES_NEWS = "https://newsapi.org/v2/top-headlines?country=in&apiKey=";
-const GENERAL_NEWS = "https://newsapi.org/v2/top-headlines?country=in&category=general&apiKey=";
-const BUSINESS_NEWS = "https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=";
-const SPORTS_NEWS = "https://newsapi.org/v2/top-headlines?country=in&category=sports&apiKey=";
-const ENTERTAINMENT_NEWS = "https://newsapi.org/v2/top-headlines?country=in&category=entertainment&apiKey=";
-const TECHNOLOGY_NEWS = "https://newsapi.org/v2/top-headlines?country=in&category=technology&pageSize=8&apiKey=";
-const SEARCH_NEWS = "https://newsapi.org/v2/everything?q=";
+async function fetchData(query){
+    const res = await fetch(`${URL}${query}&apiKey=${API_KEY}`) //&category=${category}
+    const data = await res.json()
+    return data
+}
 
-genralBtn.addEventListener("click",function(){
+fetchData("all").then(data => renderMain(data.articles))
 
-});
-
-businessBtn.addEventListener("click",function(){
-
-});
-
-sportBtn.addEventListener("click",function(){
-
-});
-
-technologyBtn.addEventListener("click",function(){
-
-});
-
-entertaimentBtn.addEventListener("click",function(){
-
-});
+function renderMain(arr){
+    
+    let newsdisplayHTML = ''
+    for(let i = 0; i < arr.length; i++){
+        if(arr[i].urlToImage){
+            newsdisplayHTML += `
+            <div class="newsCards">
+                <a class="newsDetails" href=${arr[i].url} target="_blank">
+                    <img src=${arr[i].urlToImage} alt="">
+                    <div class="newsTitle">
+                        <h5>${arr[i].title}</h5>
+                        
+                    </div>
+                </a>
+            </div>        
+            `
+        }
+    }
+// <p>${arr[i].description}</p>
+    document.getElementById("newsdisplay").innerHTML = newsdisplayHTML
+}
