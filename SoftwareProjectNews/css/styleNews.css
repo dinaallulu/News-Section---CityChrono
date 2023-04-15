@@ -15,8 +15,7 @@ a:hover {
 
 /* Start News Section */
 .newsSection .container {
-    margin: auto;
-    margin-top: 25px;
+    margin: 25px auto auto;
     background-color: #546a7b2e;
     padding: 0px;
     border-radius: 8px;
@@ -90,16 +89,16 @@ a:hover {
     border-left-color: #fff;
     border-right-color: #fff;
 }
+/**********************************************************************************************************************/
 
 /* Start News Display */
 #newsdisplay {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    flex-flow: row wrap;
     margin: 5px 2px 5px 5px;
-    height: 620px; /* 525px */
-    overflow-y: scroll;
+    height: 605px;
+    overflow: auto;
+    justify-content: center;
 }
 
 /* Srcoll in the div newsDisplay */
@@ -117,50 +116,65 @@ a:hover {
 }
 
 /* Start news Cards */
+#newsdisplay .newsCards , .newsCard {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+/* the bigger div */
+#newsdisplay .newsCard {
+    width: 50%;
+}
+
+#newsdisplay .newsCard img {
+    width: 99%;
+    
+    border-radius: 10px;
+}
+
+#newsdisplay .newsCard .newsTitle {
+    max-width: 540px;
+    height: 145px;
+    color: #fff;
+    margin: -106px -15px -28px 13px;
+    
+}
+
+#newsdisplay .newsCard .newsTitle h4{
+    font-weight: bold;
+}
+
+#newsdisplay .newsCard .newsTitle p{
+    max-width: 520px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #ffffffd0;
+}
+
+/* the small div */
 #newsdisplay .newsCards {
-    position: relative;
-    flex-basis: calc(33.33% - 10px);
-    margin: 5px;
-    /* padding: 5px;
-    background-color: #546a7b2e;
-    border: 0px solid #546a7b2e;
-    border-radius: 2px;
-    box-shadow: 3px 1px 9px #071420; */
+    width: 25%;
 }
 
 #newsdisplay .newsCards img {
-    width: 100%;
+    width: 98%;
     border-radius: 10px;
-    box-shadow: 3px 3px 2px #071420;
-    /* margin-bottom: 55px; */
 }
 
 #newsdisplay .newsCards .newsTitle {
-    position: absolute;
     color: #fff;
-    font-size: 15px;
-    /* width: 100%; */
-    opacity: 0.9;
+    margin: 10px 6px 0 13px;
 }
 
-#newsdisplay .newsCards .newsTitle h5 {
-    /* visibility: hidden; */
-    font-size: 17px;
-    font-weight: bolder;
-    margin: -66px 4px 0px;
-    text-shadow: rgb(7, 20, 32) 8px 3px 8px;
+#newsdisplay .newsCards .newsTitle h5{
+    font-weight: bold;
     text-align: center;
-    background-color: rgba(7, 20, 32, 0.286);
-    padding: 10px;
-    border-radius: 12px;
-    /* height: 500px; */
 }
 
-/* #newsdisplay .newsCards img:hover + .newsTitle h5 {
-    position: relative;
-    top: -20px;
-    visibility: visible;
-    background-color: #071420;
-    opacity: 0.3;
-    padding: 5px;
-} */
+#newsdisplay .newsCards .newsTitle p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #ffffffa9;
+    font-size: 12px;
+}
