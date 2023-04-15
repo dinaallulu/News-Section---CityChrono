@@ -3,7 +3,7 @@ const URL = "https://newsapi.org/v2/everything?q="
 
 let DATA_ARRAY = []
 
-async function fetchData(query){
+async function fetchData(query) {
     const res = await fetch(`${URL}${query}&apiKey=${API_KEY}`) //&category=${category}
     const data = await res.json()
     return data
@@ -11,24 +11,39 @@ async function fetchData(query){
 
 fetchData("all").then(data => renderMain(data.articles))
 
-function renderMain(arr){
-    
+function renderMain(arr) {
+
     let newsdisplayHTML = ''
-    for(let i = 0; i < arr.length; i++){
-        if(arr[i].urlToImage){
-            newsdisplayHTML += `
-            <div class="newsCards">
-                <a class="newsDetails" href=${arr[i].url} target="_blank">
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i].urlToImage) {
+            if (i === 0 || i == 5 || (i > 5 && (i + 1) % 5 === 0)) {
+                newsdisplayHTML += `
+                <div class="newsCard">
+                    <a class="newsDetails" href=${arr[i].url} target="_blank">
+                    <img src=${arr[i].urlToImage} alt="">
+                    <div class="newsTitle">
+                        <h4>${arr[i].title}</h4>
+                        <p>${arr[i].description}</p>
+                    </div>
+                    </a>
+                </div>
+                `;
+            } else {
+                newsdisplayHTML += `
+                <div class="newsCards">
+                    <a class="newsDetails" href=${arr[i].url} target="_blank">
                     <img src=${arr[i].urlToImage} alt="">
                     <div class="newsTitle">
                         <h5>${arr[i].title}</h5>
-                        
+                        <p>${arr[i].description}</p>
                     </div>
-                </a>
-            </div>        
-            `
+                    </a>
+                </div>
+                `;
+            }
         }
     }
-// <p>${arr[i].description}</p>
+
+    // 
     document.getElementById("newsdisplay").innerHTML = newsdisplayHTML
 }
