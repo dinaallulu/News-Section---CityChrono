@@ -89,7 +89,6 @@ a:hover {
     border-left-color: #fff;
     border-right-color: #fff;
 }
-/**********************************************************************************************************************/
 
 /* Start News Display */
 #newsdisplay {
@@ -177,3 +176,103 @@ a:hover {
     color: #ffffffa9;
     font-size: 12px;
 }
+
+/* START of the Responsive part */
+
+/* Media queries for Mobile screens */
+@media screen and (max-width: 767px) {
+    .newsSection{
+        margin: 10px;
+    }
+
+    .newsSection .container .newsNav .dropdown .dropdown-menu {
+        background-color: #253141;
+        margin-top: 8px;
+        margin-left: -115px;
+    }
+
+    /* Start newsDisplay */
+    #newsdisplay {
+        height: 465px;
+    }
+
+    /* The bigger news */
+    #newsdisplay .newsCard {
+        width: 100%;
+    }
+
+    #newsdisplay .newsCard .newsTitle {
+        height: 130px;
+        margin: -85px 17px  -28px 13px;
+    }
+
+    #newsdisplay .newsCard .newsTitle h4 {
+        font-size: 16px;
+    }
+
+    #newsdisplay .newsCard .newsTitle p {
+        max-width: 220px;
+    }
+
+    /* The small news */
+    #newsdisplay .newsCards {
+        width: 50%;
+    }
+
+    #newsdisplay .newsCards .newsTitle h5 {
+        font-size: 16px;
+    }
+
+    #newsdisplay .newsCards .newsTitle p {
+        height: 73px;
+    }
+}
+/* End of mobile screen */
+
+/* Media queries for Tablets screens */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .newsSection .container .newsNav .dropdown .dropdown-menu {
+        background-color: #253141;
+        margin-top: 8px;
+        margin-left: -115px;
+    }
+
+    /* Start newsDisplay */
+    #newsdisplay {
+        height: 444px;
+    }
+
+    /* The bigger news */
+    #newsdisplay .newsCard {
+        width: 50%;
+    }
+
+    #newsdisplay .newsCard .newsTitle {
+        height: 130px;
+        margin: -85px 17px  -28px 13px;
+    }
+
+    #newsdisplay .newsCard .newsTitle h4 {
+        font-size: 16px;
+    }
+
+    #newsdisplay .newsCard .newsTitle p {
+        max-width: 220px;
+    }
+
+    /* The small news */
+    #newsdisplay .newsCards {
+        width: 25%;
+    }
+
+    #newsdisplay .newsCards .newsTitle h5 {
+        font-size: 16px;
+    }
+
+    #newsdisplay .newsCards .newsTitle p {
+        height: 35px;
+    }
+}
+/* End of Tablets screens */
+
+/* END of the Responsive part */
