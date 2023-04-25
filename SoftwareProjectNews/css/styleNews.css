@@ -15,7 +15,7 @@ a:hover {
 
 /* Start News Section */
 .newsSection .container {
-    margin: 25px auto auto;
+    margin: 10px auto auto;
     background-color: #546a7b2e;
     padding: 0px;
     border-radius: 8px;
@@ -96,7 +96,7 @@ a:hover {
     display: flex;
     flex-flow: row wrap;
     margin: 5px 2px 5px 5px;
-    height: 605px;
+    height: 639px;
     overflow: auto;
     justify-content: center;
 }
@@ -118,18 +118,18 @@ a:hover {
 /* Start news Cards */
 #newsdisplay .newsCards , .newsCard {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row wrap; /* inline section */
 }
 
-/* the bigger div */
+/* The bigger news */
 #newsdisplay .newsCard {
     width: 50%;
 }
 
 #newsdisplay .newsCard img {
     width: 99%;
-    
     border-radius: 10px;
+    box-shadow: 3px 3px 9px #071420;
 }
 
 #newsdisplay .newsCard .newsTitle {
@@ -137,7 +137,6 @@ a:hover {
     height: 145px;
     color: #fff;
     margin: -106px -15px -28px 13px;
-    
 }
 
 #newsdisplay .newsCard .newsTitle h4{
@@ -152,7 +151,7 @@ a:hover {
     color: #ffffffd0;
 }
 
-/* the small div */
+/* The small news */
 #newsdisplay .newsCards {
     width: 25%;
 }
