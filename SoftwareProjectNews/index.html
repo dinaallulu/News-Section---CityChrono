@@ -9,48 +9,50 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <!-- Fonts icons Link -->
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <!-- Fonts Awesome icons Link -->
+    <script src="https://kit.fontawesome.com/eda60b0009.js" crossorigin="anonymous"></script>
     <!-- CSS file Link -->
     <link rel="stylesheet" href="css/styleNews.css">
     <title>News Section</title>
 </head>
 
 <body>
-    <!-- Start News Section -->
-    <section class="newsSection">
-        <div class="container">
-            <div class="newsNav">
-                <a href="index.html"><h5 class="lastestNews">latest news section</h5></a>
-                <!-- Start dropdown category -->
-                <div class="dropdown">
-                    <!-- icon category menu --> 
-                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
-                        <span class="material-symbols-outlined">
-                            filter_list
-                        </span>
-                    </a>
-                    <!-- Start dropdown category menu -->
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" onclick="showCategory('general')" href="#all" id="all">All news</a>
-                        <a class="dropdown-item" onclick="showCategory('business')" href="#business" id="business">Business</a>
-                        <a class="dropdown-item" onclick="showCategory('technology')" href="#technology" id="technology">Technology</a>
-                        <a class="dropdown-item" onclick="showCategory('health')" href="#health" id="health">Health</a>
-                        <a class="dropdown-item" onclick="showCategory('sport')" href="#sport" id="sport">Sport</a>                        
-                        <a class="dropdown-item" onclick="showCategory('entertaiment')" href="#entertaiment" id="entertaiment">Entertaiment</a>
-                        <a class="dropdown-item" onclick="showCategory('fashion')" href="#fashion" id="fashion">Fashion</a>
-                        <a class="dropdown-item" onclick="showCategory('economy')" href="#economy" id="economy">Economy</a>
-                        <a class="dropdown-item" onclick="showCategory('political')" href="#political" id="political">Political</a>                        
-                        <a class="dropdown-item" onclick="showCategory('crime')" href="#crime" id="crime">Crime</a>
+        <!-- Start News Section -->
+        <section class="newsSection">
+            <div class="container">
+                <div class="newsNav">
+                    <a href="index.html"><h5 class="lastestNews">latest news section</h5></a>
+                    <!-- Start dropdown category -->
+                    <div class="dropdown">
+                        <!-- icon category menu --> 
+                        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+                            <span class="material-symbols-outlined">
+                                filter_list
+                            </span>
+                        </a>
+                        <!-- Start dropdown category menu -->
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" onclick="Search('general')" href="#all" id="all">All news</a>
+                            <a class="dropdown-item" onclick="Search('business')" href="#business" id="business">Business</a>
+                            <a class="dropdown-item" onclick="Search('technology')" href="#technology" id="technology">Technology</a>
+                            <a class="dropdown-item" onclick="Search('health')" href="#health" id="health">Health</a>
+                            <a class="dropdown-item" onclick="Search('sport')" href="#sport" id="sport">Sport</a>                        
+                            <a class="dropdown-item" onclick="Search('entertaiment')" href="#entertaiment" id="entertaiment">Entertaiment</a>
+                            <a class="dropdown-item" onclick="Search('fashion')" href="#fashion" id="fashion">Fashion</a>
+                            <a class="dropdown-item" onclick="Search('economy')" href="#economy" id="economy">Economy</a>
+                            <a class="dropdown-item" onclick="Search('political')" href="#political" id="political">Political</a>                        
+                            <a class="dropdown-item" onclick="Search('crime')" href="#crime" id="crime">Crime</a>
+                        </div>
+                        <!-- End dropdown category menu -->
                     </div>
-                    <!-- End dropdown category menu -->
-                </div>
-                <!-- End dropdown category -->
-            </div> 
-            <!-- Start News Display -->
-            <div id="newsdisplay"></div>
-            <!-- End News Display -->
-        </div>
-    </section>
-    <!-- End News Section -->
+                    <!-- End dropdown category -->
+                </div> 
+                <!-- Start News Display -->
+                <div id="newsdisplay"></div>
+                <!-- End News Display -->
+            </div>
+        </section>
+        <!-- End News Section -->
 
     <!-- js file Link -->
     <script src="js/mainNews.js"></script>
