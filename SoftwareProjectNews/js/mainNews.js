@@ -1,7 +1,7 @@
 const API_KEY = "6a48f4f797c8464498e112e7628e2c8b"
 const URL = "https://newsapi.org/v2/everything?q="
 
-let DATA_ARRAY = []
+// let DATA_ARRAY = []
 
 async function fetchData(query) {
     const res = await fetch(`${URL}${query}&apiKey=${API_KEY}`) //&category=${category}
@@ -21,6 +21,7 @@ function renderMain(arr) {
                 <div class="newsCard">
                     <a class="newsDetails" href=${arr[i].url} target="_blank">
                     <img src=${arr[i].urlToImage} alt="">
+                    <div class="overlay"></div>
                     <div class="newsTitle">
                         <h4>${arr[i].title}</h4>
                         <p>${arr[i].description}</p>
@@ -44,6 +45,22 @@ function renderMain(arr) {
         }
     }
 
-    // 
     document.getElementById("newsdisplay").innerHTML = newsdisplayHTML
+}
+
+const searchBtn = document.getElementById("searchForm")
+const searchInput = document.getElementById("searchInput")
+
+searchBtn.addEventListener("submit", async (e) => {
+    e.preventDefault()
+    console.log(searchInput.value)
+
+    const data = await fetchData(searchInput.value)
+    renderMain(data.articles)
+
+})
+
+async function Search(query) {
+    const data = await fetchData(query)
+    renderMain(data.articles)
 }
